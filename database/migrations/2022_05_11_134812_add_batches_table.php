@@ -4,22 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddOrderTable extends Migration
+class AddBatchesTable extends Migration
 {
     /**
-     * Table order contains the number of products a person has ordered and paid
+     * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('batches', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
-            $table->integer('paid')->default(0);
-            $table->dateTime('order_date')->default(\Carbon\Carbon::now());
-            $table->unsignedBigInteger('batch_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('event_id');
         });
     }
 

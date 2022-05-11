@@ -18,7 +18,6 @@ class AddProductTable extends Migration
             $table->id();
             $table->string('name', 100)->unique();
             $table->string('img',45)->nullable();
-            $table->dateTime('selling_date');
             $table->integer('price');
             $table->unsignedBigInteger('user_id');
         });

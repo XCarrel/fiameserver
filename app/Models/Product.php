@@ -11,11 +11,22 @@ class Product extends Model
 
     public $timestamps = false;
 
-    protected $with = ['user'];
+    protected $with = ['user','orders'];
 
     protected $guarded = [];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
+    }
+
+    public function batches()
+    {
+        return $this->hasMany(Batch::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasManyThrough(Order::class,Batch::class);
     }
 }

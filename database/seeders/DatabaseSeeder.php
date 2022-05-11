@@ -49,15 +49,19 @@ class DatabaseSeeder extends Seeder
         DB::table('products')->insert([
             [
                 'name' => 'Lasagne',
-                'selling_date' => '2022-04-01',
                 'img' => 'img/lasagne.webp',
                 'price' => 10,
                 'user_id' => 1
             ],
             [
                 'name' => 'Couscous',
-                'selling_date' => '2022-04-11',
                 'img' => 'img/couscous.webp',
+                'price' => 12,
+                'user_id' => 2
+            ],
+            [
+                'name' => 'Choucroute',
+                'img' => 'img/choucroute.webp',
                 'price' => 12,
                 'user_id' => 2
             ],
